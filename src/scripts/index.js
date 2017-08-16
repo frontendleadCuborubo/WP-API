@@ -2,6 +2,7 @@ import {render} from 'react-dom';
 import DataActions from 'flux/actions/DataActions.js';
 import Home from 'components/Home.js';
 import About from 'components/About.js';
+import Post from 'components/Post.js';
 import Header from 'components/Header.js';
 
 import {
@@ -38,6 +39,7 @@ class AppInitializer {
                         <Header />
                         <Switch>
                             <Route path="/" component={ Home } exact />
+                            <Route path="/post/:id" component={ Post } />
                             {this.buildRoutes(response)}
                             <Route render={() => { return <Redirect to="/" /> }} />
                         </Switch>
